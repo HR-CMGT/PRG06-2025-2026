@@ -243,6 +243,8 @@ toon de lijst in een `<ul>`.
 Vervang de lijst en maak er een kaartenoverzicht van zoals aan het einde van opdracht 1.2. Maak voor het item een apart
 component en geef via de props de data door.
 
+**Teken eerst de componenten, en bedenk wat in elke state wordt bijgehouden**
+
 ## Forms
 
 In React worden formulieren vaak beheerd met behulp van een state-object, in plaats van aparte state variabelen. Dit
