@@ -8,7 +8,7 @@
 
 | Les   | Inhoud                                                                                                 |                          |
 |-------|--------------------------------------------------------------------------------------------------------|--------------------------|
-| Les 1 | Intro Full Stack<br>Reactive frameworks<br>Components en props<br>Full picture<br>Npm<br>VPS aanvragen | [Link](./lessen/les1.md) |
+| Les 1 | Intro Full Stack<br>Reactive frameworks<br>Components en props<br>Full picture<br>Npm<br>| [Link](./lessen/les1.md) |
 | Les 2 | Lifecycle<br>Fetch API<br>State<br>Items overzicht (GET)<br>FORMS met POST                             | [Link](./lessen/les2.md) |
 | Les 3 | Front-end routing<br>Items detailpagina (GET)<br>PUT en DELETE                                         | [Link](./lessen/les3.md) |
 | Les 4 | HTTP en REST<br>Postman<br>Express<br>Collection en details zonder DB<br>Inloggen op de server         | [Link](./lessen/les4.md) |
