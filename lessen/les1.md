@@ -251,7 +251,7 @@ function App() {
 
 #### Opdracht 1.2
 
-- Maak in je project een array articles. Dit zijn objecten, die elk een 'title' en hebben.
+- Maak in je project een array articles. Dit zijn objecten, die elk een 'title' hebben.
 - Gebruik `.map` om de titels uit de array in App.jsx te tonen in een `<ul>` met `<li>`
 - Verplaats de `<li>` naar een apart component die een `prop` genaamd `item` verwacht waarin je het object doorstuurt
 - Pas het component aan door het volledige object in een `<article>` te tonen, dat je stylt met Tailwind
