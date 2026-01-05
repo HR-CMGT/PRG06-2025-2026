@@ -6,7 +6,7 @@ Check of node en npm de juiste versie hebben:
 
 `node -v` versie 22 of 24
 
-`npm -v` versie 10
+`npm -v` versie 10 of 11
 
 - Installeer node/npm indien nodig: https://nodejs.org/en/download (Scroll naar beneden voor installer van een prebuilt
   versie)
