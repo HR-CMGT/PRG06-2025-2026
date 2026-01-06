@@ -38,11 +38,11 @@ Bij stap 4 vervang je de inhoud van `index.css` door `@import "tailwindcss";`
 - Als je klaar bent, is App.css niet meer nodig en kun je deze verwijderen ( evenals de import ervan), en kan je meteen
   alle andere default code verwijderen uit `App.jsx`.
 
-- Disable warnings over prop types in `eslint.config.js`:
+- Disable warnings over prop types, en useEffect in `eslint.config.js`:
 
 ```
 "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0, "react-hooks/set-state-in-effect": 0
   }
 ```
 
