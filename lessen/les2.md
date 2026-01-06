@@ -190,7 +190,7 @@ import React, { useState, useEffect } from "react";
 function ProductComponent() {
   const [product, setProduct] = useState(null);
 
-  async function fetchProduct() {
+  const fetchProduct = async () => {
     try {
       const response = await fetch("http://url_naar_resource", {
         method: "GET",
@@ -204,7 +204,7 @@ function ProductComponent() {
     } catch (error) {
       console.error("Fout bij het ophalen van het product:", error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchProduct();
