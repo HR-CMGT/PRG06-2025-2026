@@ -224,9 +224,13 @@ function Item({ product }) {
 
 ```javascript
 function List({ items }) {
-  const list = items.map((product) => <Item key={product.id} product={product} />);
-
-  return <ul>{list}</ul>;
+  return (
+    <ul>
+      {items.map((product) => (
+        <Item key={product.id} product={product} />
+      ))}
+    </ul>
+  );
 }
 ```
 

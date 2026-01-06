@@ -190,23 +190,23 @@ import React, { useState, useEffect } from "react";
 function ProductComponent() {
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    async function fetchProduct() {
-      try {
-        const response = await fetch("http://url_naar_resource", {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            // en overige headers
-          },
-        });
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        console.error("Fout bij het ophalen van het product:", error);
-      }
+  async function fetchProduct() {
+    try {
+      const response = await fetch("http://url_naar_resource", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          // en overige headers
+        },
+      });
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.error("Fout bij het ophalen van het product:", error);
     }
+  }
 
+  useEffect(() => {
     fetchProduct();
   }, []); // Lege array zorgt ervoor dat useEffect alleen bij de eerste render wordt uitgevoerd.
 
