@@ -130,7 +130,7 @@ const navigate = useNavigate();
 navigate("/products/");
 
 // met parameter
-navigate("/products/", { id: product.id });
+navigate(`/products/${product.id}`);
 ```
 
 #### Opdracht 3.1
