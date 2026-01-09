@@ -2,38 +2,37 @@
 
 ## MongoDB
 
-*MongoDB* is een NoSQL-database die gegevens opslaat in documenten, in plaats van in tabellen zoals bij relationele
+_MongoDB_ is een NoSQL-database die gegevens opslaat in documenten, in plaats van in tabellen zoals bij relationele
 databases. Gegevens worden opgeslagen als JSON. De database zelf is ongestructureerd.
 
 ## Mongoose
 
-De module *Mongoose* is een object-document mapper (ODM) voor *MongoDB*, vergelijkbaar met *Eloquent* in Laravel.
-Hiermee kun je
-vanuit JavaScript communiceren met de database. Daarnaast kun je in Mongoose modellen (schema's) maken voor objecten in
-de ongestructureerde database.
+De module _Mongoose_ is een object-document mapper (ODM) voor _MongoDB_, vergelijkbaar met _Eloquent_ in Laravel.
+Hiermee kun je vanuit JavaScript communiceren met de database. Daarnaast kun je in Mongoose modellen (schema's) maken
+voor objecten in de ongestructureerde database.
 
 ```javascript
-mongoose.connect('mongodb://127.0.0.1:27017/myapp');
+mongoose.connect("mongodb://127.0.0.1:27017/myapp");
 ```
 
 ### Schema
 
-Een schema in *Mongoose* definieert de structuur van documenten in een MongoDB-collectie, vergelijkbaar met een model in
-MVC.
+Een schema in _Mongoose_ definieert de structuur van documenten in een MongoDB-collectie, vergelijkbaar met een model
+in MVC.
 
 **Voorbeeld:**
 
 ```javascript
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    description: {type: String, required: true},
-    price: {type: Number, required: true},
-    inStock: {type: Boolean, default: true}
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
+  inStock: { type: Boolean, default: true },
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;
 ```
@@ -42,25 +41,25 @@ export default Product;
 
 [Installatiehandleiding les 5](../guides/installatie-week2.md)
 
-* Installeer MongoDB en Mongoose (op je laptop)
-* Laat je app verbinden met de database
-* Maak een Schema voor een note of spot, afhankelijk van de webservice die je vorige week in je React-applicatie hebt
-  gebruikt (kijk naar een detail voor de juiste indeling)
-  https://mongoosejs.com/docs/guide.html
-* Maak een endpoint `/notes` of `/spots`
-* Haal de notes of spots uit de database en return als JSON (nu uiteraard nog leeg)
-* Installeer fakerjs
-* Maak een endpoint `/notes/seed` of `/spots/seed` voor een `POST` request
-* Maak 10 fake items aan op dit endpoint en plaats ze in de database
-* Voeg toe dat je ook een detail resource op kunt vragen
-* Verplaats voor het overzicht je routes naar een `Router` in een apart
-  bestand: https://expressjs.com/en/5x/api.html#router
+- Installeer MongoDB en Mongoose (op je laptop)
+- Laat je app verbinden met de database
+- Maak een Schema voor een note of spot, afhankelijk van de webservice die je vorige week in je React-applicatie hebt
+  gebruikt (kijk naar een detail voor de juiste indeling) https://mongoosejs.com/docs/guide.html
+- Maak een endpoint `/notes` of `/spots`
+- Haal de notes of spots uit de database en return als JSON (nu uiteraard nog leeg)
+- Installeer fakerjs
+- Maak een endpoint `/notes/seed` of `/spots/seed` voor een `POST` request
+- Maak 10 fake items aan op dit endpoint en plaats ze in de database
+- Voeg toe dat je ook een detail resource op kunt vragen
+- Verplaats voor het overzicht je routes naar een `Router` in een apart bestand:
+  https://expressjs.com/en/5x/api.html#router
 
 https://fakerjs.dev/api/
 
 ## POST en PUT
 
-Met `POST` en `PUT` worden gegevens naar de webservice gestuurd. Deze gegevens kunnen worden verzonden in twee formaten:
+Met `POST` en `PUT` worden gegevens naar de webservice gestuurd. Deze gegevens kunnen worden verzonden in twee
+formaten:
 
 - **JSON**: Een gestructureerd dataformaat dat veel wordt gebruikt.
 - **application/x-www-form-urlencoded**: Een oudere standaard, vaak gebruikt bij HTML-formulieren.
@@ -71,7 +70,7 @@ Om deze gegevens in een Express-applicatie te verwerken, zijn er middleware-func
 **Voorbeeld:**
 
 ```javascript
-import express from 'express';
+import express from "express";
 
 const app = express();
 
@@ -79,28 +78,35 @@ const app = express();
 app.use(express.json());
 
 // Middleware voor www-urlencoded-gegevens
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.post('/products', (req, res) => {
-    // Toegang tot de ontvangen gegevens
-    console.log(req.body);
-    res.send('Gegevens ontvangen');
+app.post("/products", (req, res) => {
+  // Toegang tot de ontvangen gegevens
+  console.log(req.body);
+  res.send("Gegevens ontvangen");
 });
 
 app.listen(8000, () => {
-    console.log('Server luistert op poort 8000');
+  console.log("Server luistert op poort 8000");
 });
 ```
+
+### Response
+
+Het is gangbaar in een RESTful webservice om bij operaties zoals POST en PUT de aangemaakte of aangepaste resource in
+de response terug te sturen. Dit gebeurt vaak met statuscode 201 voor POST en 200 voor PUT. De reden hiervoor is dat de
+server mogelijk extra informatie heeft toegevoegd, zoals een unieke ID, timestamps, of server-side validaties, waardoor
+de client de meest actuele versie van de resource heeft. Dit helpt ook bij het synchroniseren van de client-side state.
 
 <!-- extra uitleg over json (structuur en datatypes) ? -->
 
 #### Opdracht 5.2
 
-* Laat je seed de database eerst leeg maken voor er nieuwe items worden aangemaakt (als je dat nog niet gedaan had)
-* Voeg een parameter 'amount' toe aan je seed die als x-www-formurlencoded of JSON meegestuurd kan worden, waarmee je
+- Laat je seed de database eerst leeg maken voor er nieuwe items worden aangemaakt (als je dat nog niet gedaan had)
+- Voeg een parameter 'amount' toe aan je seed die als x-www-formurlencoded of JSON meegestuurd kan worden, waarmee je
   kunt kiezen met hoeveel items je webservice gevuld wordt
-* Implementeer POST voor je webservice
-* (Optioneel) Voeg een parameter 'reset' toe aan je seed waarmee je bepaald of je de database eerst leeg maakt of niet
+- Implementeer POST voor je webservice
+- (Optioneel) Voeg een parameter 'reset' toe aan je seed waarmee je bepaald of je de database eerst leeg maakt of niet
 
 ## Status Codes
 
@@ -108,8 +114,8 @@ HTTP-statuscodes bestaan uit drie cijfers. Het eerste cijfer is de serie, en gee
 geslaagd is aan het request te voldoen. De laatste twee cijfers zijn voor meer gedetailleerde informatie. 00 wordt
 gebruikt als er geen details zijn, of er geen specifieke code bestaat voor de details.
 
-Een volledig overzicht van alle statuscodes kan je vinden
-op [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+Een volledig overzicht van alle statuscodes kan je vinden op
+[Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
 ### 2xx – Succes
 
@@ -151,17 +157,17 @@ request. Het request is wel correct, de gebruiker kan hier zelf dus niets aan do
 
 ### MongoDB
 
-De Mongoose-module, die via npm wordt geïnstalleerd, is slechts een ODM (Object Document Mapper). Om een
-database te hebben waarmee Mongoose kan communiceren, moet MongoDB zelf ook op de server worden geïnstalleerd.
-Het is het handigst om deze als service te installeren zodat hij altijd actief is.
+De Mongoose-module, die via npm wordt geïnstalleerd, is slechts een ODM (Object Document Mapper). Om een database te
+hebben waarmee Mongoose kan communiceren, moet MongoDB zelf ook op de server worden geïnstalleerd. Het is het handigst
+om deze als service te installeren zodat hij altijd actief is.
 
 ### Screen
 
 Om een Express-project te laten draaien, ook als je de SSH-verbinding verbreekt, kun je gebruik maken van het
 hulpprogramma screen. Hiermee kun je een proces starten in een virtuele sessie die blijft draaien op de server, zelfs
 als je de verbinding verbreekt. Start een screen sessie met `screen`. Je kunt nu je Express project starten, en de
-screen sessie verlaten (Ctrl+A en dan D), en uitloggen.
-Als je later opnieuw inlogt kan je terugkeren naar de screen sessie, met: `screen -r`.
+screen sessie verlaten (Ctrl+A en dan D), en uitloggen. Als je later opnieuw inlogt kan je terugkeren naar de screen
+sessie, met: `screen -r`.
 
 <!--
 * verdeling van de lessen nalopen (lijkt wel erg veel in deze les, misschien kan mongo naar 4? Of anders PUT naar 6?)
@@ -170,7 +176,7 @@ Als je later opnieuw inlogt kan je terugkeren naar de screen sessie, met: `scree
 
 
 Ook uitschrijven, of tijdens de les behandelen?
-* find met try/catch 
+* find met try/catch
 * headers in express sturen
 * middleware (ook gebruiken om item aan request toe te voegen?)
 * save en ValidationError of beter gewoon checken van lege velden?
@@ -180,7 +186,7 @@ Ook uitschrijven, of tijdens de les behandelen?
 
 [Installatiehandleiding les 5](../guides/installatie-week2.md)
 
-* Installeer MongoDB op de server
-* Zet je app op de server en test met Postman
-* Implementeer PUT en DELETE
-* Voeg de juiste statuscodes toe (denk hierbij ook na over de scenarios als er iets misgaat!)
+- Installeer MongoDB op de server
+- Zet je app op de server en test met Postman
+- Implementeer PUT en DELETE
+- Voeg de juiste statuscodes toe (denk hierbij ook na over de scenarios als er iets misgaat!)
