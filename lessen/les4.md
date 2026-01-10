@@ -14,8 +14,8 @@
   - [Webserver](#webserver)
   - [Node](#node)
   - [Express](#express)
-      - [Opdracht 4.2](#opdracht-42)
-      - [Opdracht 4.3](#opdracht-43)
+    - [Opdracht 4.2](#opdracht-42)
+    - [Opdracht 4.3](#opdracht-43)
   - [Server](#server)
     - [Shared hosting](#shared-hosting)
     - [VPS](#vps)
@@ -288,6 +288,6 @@ op basis van het bestand `package.json`.
 #### Opdracht 4.4
 
 - Volg [de installatie voor de server](../guides/installatie-week2.md)
-- Login op je server met sftp, en zet je 'hello world' over zonder node_modules
+- Login op je server met sftp, en zet je 'hello world' over zonder node_modules (sftp gebruikt poort 22)
 - Login op je server met ssh en installeer de node modules (`npm install`)
 - Start het project, en test of het werkt met een browser
