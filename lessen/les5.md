@@ -12,7 +12,11 @@ Hiermee kun je vanuit JavaScript communiceren met de database. Daarnaast kun je 
 voor objecten in de ongestructureerde database.
 
 ```javascript
-mongoose.connect("mongodb://127.0.0.1:27017/myapp");
+try {
+  await mongoose.connect("mongodb://127.0.0.1:27017/myapp");
+} catch (e) {
+  console.log("Database connection failed");
+}
 ```
 
 ### Schema
@@ -41,20 +45,28 @@ export default Product;
 
 [Installatiehandleiding les 5](../guides/installatie-week2.md)
 
+**Database**
+
 - Installeer MongoDB en Mongoose (op je laptop)
 - Laat je app verbinden met de database
+- Verplaats voor het overzicht je huidige routes naar een `Router` in een apart bestand:
+  https://expressjs.com/en/5x/api.html#router
 - Maak een Schema voor een note of spot, afhankelijk van de webservice die je vorige week in je React-applicatie hebt
   gebruikt (kijk naar een detail voor de juiste indeling) https://mongoosejs.com/docs/guide.html
-- Maak een endpoint `/notes` of `/spots`
-- Haal de notes of spots uit de database en return als JSON (nu uiteraard nog leeg)
+
+**Seeder**
+
 - Installeer fakerjs
 - Maak een endpoint `/notes/seed` of `/spots/seed` voor een `POST` request
 - Maak 10 fake items aan op dit endpoint en plaats ze in de database
-- Voeg toe dat je ook een detail resource op kunt vragen
-- Verplaats voor het overzicht je routes naar een `Router` in een apart bestand:
-  https://expressjs.com/en/5x/api.html#router
 
 https://fakerjs.dev/api/
+
+**Collection en detail**
+
+- Maak een endpoint `/notes` of `/spots`
+- Haal de notes of spots uit de database en return als JSON (nu uiteraard nog leeg)
+- Voeg toe dat je ook een detail resource op kunt vragen
 
 ## POST en PUT
 
