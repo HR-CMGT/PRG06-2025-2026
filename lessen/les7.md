@@ -165,7 +165,12 @@ beter te kunnen beheren.
 
 ## Opdracht 7.1
 
-- Start met je eindopdracht (en maak per project een Git repository zoals je gewend bent)
+Start met je eindopdracht
+
+- Maak voor de backend en front-end twee nieuwe projecten aan (en maak per project een Git repository zoals je gewend
+  bent)
+- [Backend](../guides/installatie-week2.md)
+- [Front-end](../guides/installatie-week1.md)
 
 <!--
 * versiebeheer in URI toevoegen?
