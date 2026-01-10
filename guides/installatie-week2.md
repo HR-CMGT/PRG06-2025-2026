@@ -15,6 +15,8 @@ Wij gebruiken `import` en geen `require`. Zet daarom in 'package.json' het `type
 }
 ```
 
+- Maak het bestand `.gitignore` aan en zet daar in ieder geval `.env`, `node_modules` en `.idea` in.
+
 - Maak het bestand `index.js` aan
 
 - Maak het bestand `.env` aan
