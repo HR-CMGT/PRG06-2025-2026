@@ -33,9 +33,9 @@ Wij gebruiken `import` en geen `require`. Zet daarom in 'package.json' het `type
 - Installeer node op de server
 
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 source ~/.bashrc
-nvm install 22
+nvm install 24
 ```
 
 (Bron: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04 option 3)
