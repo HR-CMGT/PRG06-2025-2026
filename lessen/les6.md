@@ -180,10 +180,11 @@ Een _origin_ bestaat uit het protocol (`http` of `https`), de domeinnaam (bijv. 
 Hier zijn enkele van de meest gebruikte CORS-gerelateerde headers:
 
 - `Access-Control-Allow-Origin`: Bepaalt welke sites (origins) toegang hebben tot de resource. Gebruik `*` om alle
-  origins toe te staan.
+  origins toe te staan. Stuur deze header altijd.
 - `Access-Control-Allow-Methods`: Geeft de HTTP-methoden aan die toegestaan zijn voor een resource (zoals `GET`,
-  `POST`, `PUT`, enz.).
-- `Access-Control-Allow-Headers`: Specificeert welke headers de client mag gebruiken in het request.
+  `POST`, `PUT`, enz.). Stuur deze als responde bij OPTIONS.
+- `Access-Control-Allow-Headers`: Specificeert welke headers de client mag gebruiken in het request. Stuur deze als
+  responde bij OPTIONS.
 
 <!--
 Dit lijkt niet nodig voor Authentication
@@ -214,10 +215,9 @@ bijvoorbeeld geen Authorization of Accept header.
 Bij het opzetten van CORS in een RESTful webservice moet je met de volgende zaken rekening houden:
 
 - In elke response moeten de toegestane origins worden aangegeven.
-- Elke resource moet de toegestane headers specificeren.
 - Een `OPTIONS` request moet, naast de standaard `Allow` header, ook de CORS-specifieke `Access-Control-Allow-Methods`
-  header bevatten. NB. Een preflight wordt altijd zonder headers gestuurd, dus let op dat je geen eisen aan het request
-  stelt (zoals een Accept-header).
+  header en `Access-Control-Allow-Headers` bevatten. NB. Een preflight wordt altijd zonder headers gestuurd, dus let op
+  dat je geen eisen aan het request stelt (zoals een Accept-header).
 
 #### Opdracht 6.3
 
