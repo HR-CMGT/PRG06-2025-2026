@@ -157,7 +157,7 @@ Tijdens deze cursus maken we gebruik van Postman, maar er zijn ook andere REST c
 - Installeer Postman
 - Tip: als je een account maakt bij Postman kan je je requests opslaan om later her te gebruiken. Dat is heel handig
   als je straks je eigen service moet debuggen
-- Haal met GET de collectie https://notes.basboot.nl op
+- Haal met GET de collectie https://notes.basboot.nl/notes op
 - Haal een detail resource op om de indeling te zien
 - Maak nu een nieuwe note aan (als JSON)
 - Maak nog een nieuwe note aan (nu als x-www-form-urlencoded)
