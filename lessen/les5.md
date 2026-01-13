@@ -106,7 +106,7 @@ app.listen(8000, () => {
 ### Response
 
 Het is gangbaar in een RESTful webservice om bij operaties zoals POST en PUT de aangemaakte of aangepaste resource in
-de response terug te sturen. Dit gebeurt vaak met statuscode 201 voor POST en 200 voor PUT. De reden hiervoor is dat de
+de response terug te sturen. Dit gebeurt met statuscode 201 voor POST en 200 voor PUT. De reden hiervoor is dat de
 server mogelijk extra informatie heeft toegevoegd, zoals een unieke ID, timestamps, of server-side validaties, waardoor
 de client de meest actuele versie van de resource heeft. Dit helpt ook bij het synchroniseren van de client-side state.
 
