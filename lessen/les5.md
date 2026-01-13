@@ -57,14 +57,14 @@ export default Product;
 **Seeder**
 
 - Installeer fakerjs
-- Maak een endpoint `/notes/seed` of `/spots/seed` voor een `POST` request
+- Maak een endpoint (route) `/notes/seed` of `/spots/seed` voor een `POST` request
 - Maak 10 fake items aan op dit endpoint en plaats ze in de database
 
 https://fakerjs.dev/api/
 
 **Collection en detail**
 
-- Maak een endpoint `/notes` of `/spots`
+- Maak een endpoint (route) `/notes` of `/spots`
 - Haal de notes of spots uit de database en return als JSON (nu uiteraard nog leeg)
 - Voeg toe dat je ook een detail resource op kunt vragen
 
