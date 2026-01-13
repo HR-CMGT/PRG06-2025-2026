@@ -64,7 +64,9 @@ app.get("/example", (req, res) => {
 
 - Zorg dat alleen requests met een Accept-header voor `application/json` worden geaccepteerd, gebruik hiervoor
   middleware: https://expressjs.com/en/guide/using-middleware.html
-- Implementeer OPTIONS _Welke statuscode past het best bij OPTIONS?_
+- Implementeer OPTIONS, en zorg dat de middleware een uitzondering maakt zodat OPTIONS wél zonder Accept-header wordt geaccepteerd. 
+
+_Welke statuscode past het best bij OPTIONS?_
 
 ## HATEOAS
 
