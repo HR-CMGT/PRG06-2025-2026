@@ -139,7 +139,7 @@ const MySchema = new Schema(
 
 Voor deze cursus hebben we een script dat op een aantal punten checkt of een webservice aan (onze) standaarden voldoet.
 
-[Checker](https://checker.basboot.nl)
+[Checker](https://cmgt.hr.nl:8001/)
 
 #### Opdracht 6.2
 
