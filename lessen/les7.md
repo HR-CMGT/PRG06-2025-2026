@@ -68,6 +68,30 @@ op te vragen met 10 producten erop, gebruik je dus:
 
 **Let op:** De eerste pagina is pagina `1` en niet `0` zoals bij arrays.
 
+## Filtering
+
+Filtering stelt gebruikers in staat om de collectie te beperken door alleen items te laten zien die voldoen aan
+bepaalde criteria.
+
+Je kunt filtering implementeren door query parameters toe te voegen aan de URL. Bijvoorbeeld, om producten te filteren
+op categorie of prijs, of te zoeken naar een bepaald woord.
+
+```
+GET /products?category=electronics
+```
+
+### Link to self
+
+De link to self van een resource is bedoeld om de resource die je _nu_ bekijkt terug te kunnen vinden. Bij pagination
+betekent dat dus dat de `page` en `limit` in de link naar self van de collectie moeten staan, en bij filtering de
+query.
+
+### Verschil pagination en filtering
+
+Pagination verdeelt een collectie in stukken die apart opvraagbaar zijn. Bij filtering wordt de collectie daadwerkelijk
+verkleind. In de pagination zie je daardoor niet meer hoeveel items de volledige collectie heeft, maar het aantal items
+dat voldoet aan de query. Pagination en filtering kunnen ook gecombineerd worden.
+
 ## Caching
 
 _Caching_ is het bewaren van een kopie van iets dat tijd kost om te maken of op te halen. Als je dit dan een tweede
