@@ -6,11 +6,10 @@ Het HTTP protocol heeft slechts een beperkte set aan methods (`GET`, `POST`, `PU
 dingen doen die hier niet in voorkomen. We gebruiken in dat geval altijd de method `POST`. Omdat dit de enige method is
 die niet safe, en niet indempotent hoeft te zijn weten we zeker dat een client hier altijd 'voorzichtig' mee zal zijn.
 Omdat het geen normale `POST` is sturen we in het request een variable `method` mee waarin we de echte method zetten,
-bijv `method=UNDELETE`.
-We noemen dit principe *POST overloading* omdat we een `POST` een andere betekenis geven.
-Het meesturen van de echte method in een aparte variabele is niet alleen voor de duidelijkheid, maar ook omdat het
-daardoor mogelijk is om een POST overload naast een normale `POST` te gebruiken, of meerdere overloads voor één endpoint
-te definieren.
+bijv `method=UNDELETE`. We noemen dit principe _POST overloading_ omdat we een `POST` een andere betekenis geven. Het
+meesturen van de echte method in een aparte variabele is niet alleen voor de duidelijkheid, maar ook omdat het daardoor
+mogelijk is om een POST overload naast een normale `POST` te gebruiken, of meerdere overloads voor één endpoint te
+definieren.
 
 ### Voorbeeld
 
@@ -21,10 +20,19 @@ netter doen, door de seeder gewoon op de collectie te zetten met `method=SEED`.
 
 Met JWTs (JSON Web Tokens) kan je geauthenticeerd blijven zonder telkens opnieuw hoeven in te loggen.
 
-* Gebruiker logt in op authenticatieserver
-* Authenticatieserver creëert een JWT op basid van een *shared secret*
-* Client stuurt token mee met elk request (`fetch`) naar applicatieserver
-* Applicatieserver (zonder authenticatieserver) kan zelf dit token valideren dankzij shared secret
+- Gebruiker logt in op authenticatieserver
+- Authenticatieserver creëert een JWT op basid van een _shared secret_, en stuurt dit naar de client:
+
+```
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJpYXQiOjE3NjgzMTg4MTQsImV4cCI6MTc2ODMyMjQxNH0.NhiqFlMEsOXDki0QOMfJ-o5El3pqu_G8rgRd87q-xGM",
+    "token_type": "Bearer",
+    "expires_in": 3600
+}
+```
+
+- Client stuurt token mee in de headers van elk request (`fetch`) aan de applicatieserver
+- Applicatieserver (zonder authenticatieserver) kan zelf dit token valideren dankzij shared secret
 
 https://jwt.io
 
@@ -75,9 +83,9 @@ Authorization: Bearer <token>
 
 Bij authenticatie kunnen verschillende statuscodes worden teruggestuurd om aan te geven waarom toegang geweigerd wordt:
 
-* **401 Unauthorized** De client heeft geen (geldige) authenticatiegegevens gestuurd
+- **401 Unauthorized** De client heeft geen (geldige) authenticatiegegevens gestuurd
 
-* **403 Forbidden** De client heeft onvoldoende rechten
+- **403 Forbidden** De client heeft onvoldoende rechten
 
 ### HTTPS
 
@@ -86,8 +94,8 @@ dat paswoorden en tokens versleuteld verstuurd worden.
 
 #### Opdracht 8.1
 
-* Ga naar: https://www.base64decode.org/
-* Decodeer ‘SGVsbG8sIHdvcmxk’
+- Ga naar: https://www.base64decode.org/
+- Decodeer ‘SGVsbG8sIHdvcmxk’
 
 #### Opdracht 8.2
 
@@ -95,6 +103,6 @@ Ga verder met je eindopdracht
 
 <!-- btoa atob in presentatie zetten? -->
 
-* [JWT](https://jwt.io)
-* [Base64](https://www.base64encode.org)
-* [http auth](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [JWT](https://jwt.io)
+- [Base64](https://www.base64encode.org)
+- [http auth](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
