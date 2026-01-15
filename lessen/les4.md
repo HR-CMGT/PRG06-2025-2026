@@ -157,7 +157,7 @@ Tijdens deze cursus maken we gebruik van Postman, maar er zijn ook andere REST c
 - Installeer Postman
 - Tip: als je een account maakt bij Postman kan je je requests opslaan om later her te gebruiken. Dat is heel handig
   als je straks je eigen service moet debuggen
-- Haal met GET de collectie https://notes.basboot.nl op
+- Haal met GET de collectie https://notes.basboot.nl/notes op
 - Haal een detail resource op om de indeling te zien
 - Maak nu een nieuwe note aan (als JSON)
 - Maak nog een nieuwe note aan (nu als x-www-form-urlencoded)
@@ -226,9 +226,7 @@ app.get("/products/:id", (req, res) => {
 #### Opdracht 4.2
 
 - Volg [de installatie voor lokaal](../guides/installatie-week2.md)
-- Maak het bestand `index.js` aan
-
-- Maak het bestand `.env` aan
+- Maak bestandanden `.gitignore`, `index.js` en `.env` aan
 - Pas het run-script in `package.json` aan om te zorgen dat je `.env` wordt geladen
 
 ```
@@ -239,7 +237,7 @@ app.get("/products/:id", (req, res) => {
 
 - Maak de 'Hello World' met Express
 - Gebruik `.env` om het poort-nummer van je Express app te configureren
-- Pas hem daarna aan om JSON terug te sturen.
+- Pas hem daarna aan om 'Hello World' in een JSON-object terug te sturen.
 
 #### Opdracht 4.3
 
