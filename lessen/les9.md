@@ -100,7 +100,7 @@ De logica in de back-end routing is:
 
 De configuratie van routering verschilt per webserver.
 
-Klik [hier](../guides/deployment-react-vite/) voor de complete installatiehandleiding.
+Klik [hier](../guides/deployment-react-vite/) voor een complete installatiehandleiding, die je bij TLE kunt gebruiken.
 
 #### Opdracht 9.1
 
