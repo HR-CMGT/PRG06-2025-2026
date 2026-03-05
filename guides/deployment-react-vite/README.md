@@ -29,7 +29,7 @@ werkende webserver hebt waar je Laravel project kan draaien.
 
 ## Installatie
 
-Download de zip op jouw laptop en pak deze uit. Open je Terminal (mac) of Powershell (Windows) en navigeer naar de map
+[Download de zip](deployment-scripts.zip) op jouw laptop en pak deze uit. Open je Terminal (mac) of Powershell (Windows) en navigeer naar de map
 die net is uitgepakt. Zorg ervoor dat je in die map zit. Als je in de goede map staat kun je de bestanden uploaden naar
 jullie server. Draai het volgende commando en vervang `<user>` en `<ip>` met je eigen gegevens (`<>` tekens moeten hier
 niet meer staan na het aanpassen naar je eigen gegevens):
@@ -90,10 +90,10 @@ deployment keys, zodat de server namens jou op GitHub kan inloggen
 
 - Draai `cat ~/.ssh/id_rsa.pub` op de server om jouw key te kunnen zien
 - Kopieer deze key (dus de hele output van het commando)
-- Ga naar GitHub.com en open jouw repository
+- Ga naar github.com en open jouw repository
   - Ga naar **Settings** en daarbinnen naar **Deploy keys**
   - Voeg een nieuwe toe en plak hier jouw gekopieerde key
-  - Geef als titel `hr-vm-tle2_1`
+  - Geef als titel `hr-vps-tle2`
   - Laat het vinkje voor write access uitstaan
 
 Run nu het volgende script. Let op, dit doe je **ZONDER** sudo (vul je wachtwoord in voor `sudo` wanneer hier tussendoor
@@ -103,7 +103,7 @@ om wordt gevraagd). Je krijgt 3 vragen waarvan de uitleg onder het commando staa
 ./configure_webserver.sh
 ```
 
-- Vraag 1: Vul hier je SSH GitHub link in (ziet eruit als `git@GitHub.com:<username>/<repo>.git`). Klik hiervoor op de
+- Vraag 1: Vul hier je SSH GitHub link in (ziet eruit als `git@github.com:<username>/<repo>.git`). Klik hiervoor op de
   groene knop **Code** op de startpagina van de repository en vervolgens op de tab **SSH**
 - Vraag 2: De naam van je project ZONDER spaties of hoofdletters (bv: my-react-project)
 
