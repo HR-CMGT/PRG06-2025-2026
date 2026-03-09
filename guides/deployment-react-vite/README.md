@@ -95,7 +95,7 @@ deployment keys, zodat de server namens jou op GitHub kan inloggen
 - Ga naar github.com en open jouw repository
   - Ga naar **Settings** en daarbinnen naar **Deploy keys**
   - Voeg een nieuwe toe en plak hier jouw gekopieerde key
-  - Geef als titel `hr-vps-tle2`
+  - Geef als titel `hr-vps-tle3`
   - Laat het vinkje voor write access uitstaan
 
 Run nu het volgende script. Let op, dit doe je **ZONDER** sudo (vul je wachtwoord in voor `sudo` wanneer hier tussendoor
