@@ -108,6 +108,7 @@ om wordt gevraagd). Je krijgt 3 vragen waarvan de uitleg onder het commando staa
 - Vraag 1: Vul hier je SSH GitHub link in (ziet eruit als `git@github.com:<username>/<repo>.git`). Klik hiervoor op de
   groene knop **Code** op de startpagina van de repository en vervolgens op de tab **SSH**
 - Vraag 2: De naam van je project ZONDER spaties of hoofdletters (bv: my-react-project)
+- ⚠️ Belangrijk: voer nadat het script klaar is het commando `source ~/.bashrc` uit.
 
 > Na het draaien van dit script kun je opnieuw naar http://\<jouw-ip> gaan in de browser. Je zou hier nu je React
 > applicatie werkend moeten zien draaien! 🚀
