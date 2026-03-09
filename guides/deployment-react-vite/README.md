@@ -16,6 +16,8 @@ maar je kunt ook een eigen serveromgeving gebruiken.
 Deze handleiding werkt met Ubuntu (v22.04 of v24.04) om de noodzakelijke tools te installeren, en te zorgen dat je een
 werkende webserver hebt waar je React project kan draaien.
 
+⚠️ Let op: dit script is bedoeld om de live omgeving te deployen en laat dus de *main* branch zien.
+
 ### Let op voor je aan de slag gaat!
 
 > - Je moet voor de stappen hieronder je logingegevens paraat hebben van de aanvraag voor de VPS
@@ -112,7 +114,7 @@ om wordt gevraagd). Je krijgt 3 vragen waarvan de uitleg onder het commando staa
 
 ## Deployen nieuwe versie
 
-Staat er een nieuw versie in de _main_ branche? Dan kun je dit met de volgende stappen deployen:
+Staat er een nieuw versie in de _main_ branch? Dan kun je dit met de volgende stappen deployen:
 
 - Zorg ervoor dat je in de home folder zit. Dit is de map die standaard geopend wordt wanneer je inlogt met SSH. Mocht
   je toch niet in die map zitten, voer dan het volgende commando uit: `cd ~` (de ~ staat voor de home folder).
