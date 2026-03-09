@@ -14,7 +14,7 @@ Om je project op een onlineomgeving te krijgen ga je werken met een VPS. Als tea
 maar je kunt ook een eigen serveromgeving gebruiken.
 
 Deze handleiding werkt met Ubuntu (v22.04 of v24.04) om de noodzakelijke tools te installeren, en te zorgen dat je een
-werkende webserver hebt waar je Laravel project kan draaien.
+werkende webserver hebt waar je React project kan draaien.
 
 ### Let op voor je aan de slag gaat!
 
