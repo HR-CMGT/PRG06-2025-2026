@@ -18,7 +18,7 @@ werkende webserver hebt waar je React project kan draaien.
 
 ### Let op voor je aan de slag gaat!
 
-> - Je moet voor de stappen hieronder je logingegevens paraat hebben van de aanvraag voor de VM
+> - Je moet voor de stappen hieronder je logingegevens paraat hebben van de aanvraag voor de VPS
 > - Als je gegevens (zoals je wachtwoord) wilt kopiëren en plakken op Windows in Powershell moet je jouw rechtermuisknop
 >   gebruiken om te plakken
 > - Als er gevraagd wordt om een fingerprint toe te voegen moet je met "yes" antwoorden (dit wordt 2 keer gevraagd in
