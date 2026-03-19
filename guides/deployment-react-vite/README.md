@@ -58,10 +58,10 @@ Je zou nu de scripts moeten zien die je eerder op je eigen laptop hebt uitgepakt
 scripts te kunnen draaien moet je ze qua rechten aanpassen zodat ze 'executable' zijn:
 
 ```bash
-chmod u+x install_tools.sh configure_webserver.sh deploy.sh
+chmod u+x install_tools.sh configure_webserver.sh deploy.sh reset.sh
 ```
 
-Run nu onderstaand script en lees tijdens de installatie de uitleg die eronder staat:
+Run nu onderstaand script en lees tijdens de installatie de uitleg aandachtig:
 
 ```bash
 ./install_tools.sh
@@ -98,8 +98,7 @@ deployment keys, zodat de server namens jou op GitHub kan inloggen
   - Geef als titel `hr-vps-tle3`
   - Laat het vinkje voor write access uitstaan
 
-Run nu het volgende script. Let op, dit doe je **ZONDER** sudo (vul je wachtwoord in voor `sudo` wanneer hier tussendoor
-om wordt gevraagd). Je krijgt 3 vragen waarvan de uitleg onder het commando staat:
+Run nu het volgende script en voer de gevraagde gegevens in (zie hieronder een toelichting op de vragen). Wanneer het wachtwoord nogmaals gevraagd wordt dan voer je die in. Dit is nodig om met sudo-rechten bepaalde acties uit te voeren.
 
 ```bash
 ./configure_webserver.sh
@@ -119,9 +118,15 @@ Staat er een nieuw versie in de _main_ branch? Dan kun je dit met de volgende st
 
 - Zorg ervoor dat je in de home folder zit. Dit is de map die standaard geopend wordt wanneer je inlogt met SSH. Mocht
   je toch niet in die map zitten, voer dan het volgende commando uit: `cd ~` (de ~ staat voor de home folder).
-- Voer het commando `./deploy.sh` uit. Dit commando pulled de wijzigingen van _main_ en build het project met Vite
+- Voer onderstaand script uit. Dit script pulled de wijzigingen van _main_ en build het project met Vite
   (`npm run build`). De bestanden die daaruit komen worden verplaatst naar de juiste plek op de server, waarna de nieuwe
   versie online te zien is op `http://\<jouw-ip>`.
+
+```bash
+./deploy.sh
+```
+
+<br>
 
 > Heb je meer nodig in je deployment flow, dan kun je het deploy script natuurlijk aanpassen.
 
